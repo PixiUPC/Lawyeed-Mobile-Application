@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lawyeed.R
-//import com.example.lawyeed.one_case
+import com.example.lawyeed.one_case
 
 class Adapter(val notifications:List<Notification>): RecyclerView.Adapter<NotificationListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationListViewHolder {
@@ -21,11 +21,9 @@ class Adapter(val notifications:List<Notification>): RecyclerView.Adapter<Notifi
         holder.render(post)
         holder.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
-                /*
                 var intent: Intent = Intent(holder.itemView.context, one_case::class.java)
                 intent.putExtra("id",post.consultId)
                 holder.itemView.context.startActivity(intent)
-                 */
             }
         })
     }
