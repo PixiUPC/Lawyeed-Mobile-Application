@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnCases).setOnClickListener() {
             startActivity(Intent(this, Cases::class.java))
         }
-        
+
 
 
         //Lista de Abogados
