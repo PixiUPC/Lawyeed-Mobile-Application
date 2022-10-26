@@ -12,16 +12,17 @@ import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 
-class Search : AppCompatActivity(){
+class SearchName : AppCompatActivity(){
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         var db: OpenHelper = OpenHelper(applicationContext)
         var personId = db.getUserId()
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search)
+        setContentView(R.layout.activity_search_name)
         supportActionBar?.hide();
 
         Picasso.get()
@@ -32,15 +33,10 @@ class Search : AppCompatActivity(){
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 
-        findViewById<Button>(R.id.btnregresarmain).setOnClickListener() {
-            startActivity(Intent(this, MainActivity::class.java))
+        findViewById<Button>(R.id.btnregresarsearch).setOnClickListener() {
+            startActivity(Intent(this, Search::class.java))
         }
-        findViewById<Button>(R.id.btnSearchName).setOnClickListener() {
-            startActivity(Intent(this, SearchName::class.java))
-        }
-        findViewById<Button>(R.id.btnSearchSpecialty).setOnClickListener() {
-            startActivity(Intent(this, SearchSpecialty::class.java))
-        }
+
 
 
     }

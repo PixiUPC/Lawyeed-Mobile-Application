@@ -12,7 +12,7 @@ import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 
-class Search : AppCompatActivity(){
+class SearchSpecialty : AppCompatActivity(){
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class Search : AppCompatActivity(){
         var personId = db.getUserId()
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search)
+        setContentView(R.layout.activity_search_specialty)
         supportActionBar?.hide();
 
         Picasso.get()
@@ -32,14 +32,8 @@ class Search : AppCompatActivity(){
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 
-        findViewById<Button>(R.id.btnregresarmain).setOnClickListener() {
-            startActivity(Intent(this, MainActivity::class.java))
-        }
-        findViewById<Button>(R.id.btnSearchName).setOnClickListener() {
-            startActivity(Intent(this, SearchName::class.java))
-        }
-        findViewById<Button>(R.id.btnSearchSpecialty).setOnClickListener() {
-            startActivity(Intent(this, SearchSpecialty::class.java))
+        findViewById<Button>(R.id.btnregresarsearch).setOnClickListener() {
+            startActivity(Intent(this, Search::class.java))
         }
 
 
