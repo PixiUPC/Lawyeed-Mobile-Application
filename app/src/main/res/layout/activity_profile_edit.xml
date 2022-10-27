@@ -34,7 +34,8 @@
                     android:layout_height="50dp"
                     android:src="@drawable/default_user"
                     android:layout_alignParentEnd="true"
-                    app:shapeAppearanceOverlay="@style/roundimageview"/>
+                    app:shapeAppearanceOverlay="@style/roundimageview"
+                    android:id="@+id/myphotomini"/>
             </RelativeLayout>
 
             <LinearLayout
@@ -48,7 +49,8 @@
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:src="@drawable/default_user"
-                    app:shapeAppearanceOverlay="@style/roundimageviewbig"/>
+                    app:shapeAppearanceOverlay="@style/roundimageviewbig"
+                    android:id="@+id/myphoto"/>
             </LinearLayout>
 
             <LinearLayout

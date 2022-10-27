@@ -151,7 +151,8 @@
                 android:background="@drawable/rounded_corner"
                 app:backgroundTint="@color/black"
                 android:layout_marginTop="15dp"
-                android:text="COMPRAR SUBSCRIPCION"/>
+                android:text="COMPRAR SUBSCRIPCION"
+                android:id="@+id/btnComprarSubscripcion"/>
 
         </LinearLayout>
     </ScrollView>
