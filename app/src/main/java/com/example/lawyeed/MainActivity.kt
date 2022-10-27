@@ -61,6 +61,12 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        //Ingresar a mi perfil
+        val btnIngresarPerfil: ShapeableImageView = findViewById(R.id.person_image)
+        btnIngresarPerfil.setOnClickListener() {
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
 
         //Lista de Abogados
         val listLawyers = mutableListOf<Beans.Lawyer>()
