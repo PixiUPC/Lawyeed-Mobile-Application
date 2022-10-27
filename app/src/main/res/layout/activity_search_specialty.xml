@@ -41,12 +41,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/textInputEditTextCases"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_button2"
-                android:hint="Promedio de Casos Ganados"
+                android:hint="Minimo Numero de Casos Ganados"
                 android:inputType="text"
                 android:maxLines="1"
                 android:textColor="@color/black" />
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/textInputEditTextSpecialty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

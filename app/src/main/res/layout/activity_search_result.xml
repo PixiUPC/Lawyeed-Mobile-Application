@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,51 +23,30 @@
             android:layout_width="42dp"
             android:layout_height="42dp"
             android:layout_alignParentEnd="true"
-            android:id="@+id/person_image" />
+            android:id="@+id/person_image"/>
     </RelativeLayout>
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp">
+        android:background="@drawable/border_botton_titles"
+        android:text="Abogados Encontrados"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#2B2B2B"
+        android:layout_marginBottom="5dp"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <EditText
-                android:id="@+id/textInputEditTextNames"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nombre(s) del Abogado"
-                android:background="@drawable/round_button2"
-                android:inputType="text"
-                android:maxLines="1"
-                android:textColor="@color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/btnIniSearchName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/round_button"
-            android:text="Buscar" />
-
-    </LinearLayout>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingHorizontal="5dp"
+        android:id="@+id/recycler_searchlawyers"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-
         <Button
             android:id="@+id/btnregresarsearch"
             android:layout_width="match_parent"
@@ -79,10 +57,6 @@
             tools:ignore="MissingConstraints"
             android:textColor="@color/white"/>
 
-
     </RelativeLayout>
-
-
-
 
 </LinearLayout>
