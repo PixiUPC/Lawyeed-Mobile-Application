@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Lawyeed"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileEdit"
+            android:exported="false" />
+        <activity
             android:name=".Profile"
             android:exported="false" />
         <activity
