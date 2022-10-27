@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 
@@ -27,27 +28,22 @@ class ProfileEdit : AppCompatActivity() {
             .into(findViewById<ShapeableImageView>(R.id.myphoto))
         println(db.getUserImage())
 
+        val name = db.getUserName()
+        val description = db.getUserDescription()
+        val email = db.getUserEmail()
+
         val editNombre: EditText = findViewById(R.id.editNombre)
         val editDescripcion: EditText = findViewById(R.id.editDescripcion)
         val editEmail: EditText = findViewById(R.id.editEmail)
         val editEdad: EditText = findViewById(R.id.editEdad)
 
-        /*val nombres: String? = intent.getStringExtra("nombresValue")
-        val descripcion: String? = intent.getStringExtra("descripcionValue")
-        val email: String? = intent.getStringExtra("emailValue")
-        val edad: String? = intent.getStringExtra("edadValue")
+        editNombre.setText(name)
+        editDescripcion.setText(description)
+        editEmail.setText(email)
 
-        editNombre.setText(nombres.toString())
-        editDescripcion.setText(descripcion.toString())
-        editEmail.setText(email.toString())
-        editEdad.setText(edad.toString())*/
 
         btnActualizarPerfil.setOnClickListener() {
             val intent = Intent(this, ProfileUpdated::class.java)
-            /*intent.putExtra("nombresValue", editNombre.text.toString())
-            intent.putExtra("descripcionValue", editDescripcion.text.toString())
-            intent.putExtra("emailValue", editEmail.text.toString())
-            intent.putExtra("edadValue", editEdad.text.toString())*/
             startActivity(intent)
         }
     }
