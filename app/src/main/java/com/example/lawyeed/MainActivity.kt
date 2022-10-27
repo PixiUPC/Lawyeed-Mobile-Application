@@ -56,6 +56,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnCases).setOnClickListener() {
             startActivity(Intent(this, Cases::class.java))
         }
+        findViewById<Button>(R.id.btnSearch).setOnClickListener() {
+            startActivity(Intent(this, Search::class.java))
+        }
 
 
 
@@ -97,15 +100,10 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<List<PersonResponse>?>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    t?.printStackTrace()
                 }
 
             })
-
-
-
-
-
 
 
 
@@ -138,7 +136,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<List<CasesResponse>?>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    t?.printStackTrace()
                 }
 
             })
@@ -169,7 +167,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<List<NotificationResponse>?>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    t?.printStackTrace()
                 }
 
             })

@@ -22,8 +22,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class one_case : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_one_case)
