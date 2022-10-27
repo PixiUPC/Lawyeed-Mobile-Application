@@ -1,5 +1,6 @@
 package com.example.lawyeed
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -28,12 +29,12 @@ class ProfileEdit : AppCompatActivity() {
         editEdad.setText(edad.toString())*/
 
         btnActualizarPerfil.setOnClickListener() {
-            //val intent = Intent(this, MyProfileUpdated::class.java)
+            val intent = Intent(this, ProfileUpdated::class.java)
             /*intent.putExtra("nombresValue", editNombre.text.toString())
             intent.putExtra("descripcionValue", editDescripcion.text.toString())
             intent.putExtra("emailValue", editEmail.text.toString())
             intent.putExtra("edadValue", editEdad.text.toString())*/
-            //startActivity(intent)
+            startActivity(intent)
         }
     }
 }

@@ -38,12 +38,12 @@ class Profile : AppCompatActivity() {
 
 
         btnEditarPerfil.setOnClickListener() {
-            //val intent = Intent(this, ProfileEdit::class.java)
+            val intent = Intent(this, ProfileEdit::class.java)
             /*intent.putExtra("nombresValue", textNombre.text.toString())
             intent.putExtra("descripcionValue", textDescripcion.text.toString())
             intent.putExtra("emailValue", textEmail.text.toString())
             intent.putExtra("edadValue", textEdad.text.toString())*/
-            //startActivity(intent)
+            startActivity(intent)
         }
     }
 }
