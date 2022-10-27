@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Lista de Abogados
-        val listLawyers = mutableListOf<Beans.Lawyer>()
+        val listLawyers = mutableListOf<Beans.Lawyers>()
 
         getRetrofit().create(API::class.java)
             .getLawyers("personlawyers/").enqueue(object : Callback<List<PersonResponse>?> {
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                     for(item in response.body()!!) {
                         if(counter < 5) {
                             listLawyers.add(
-                                Beans.Lawyer(
+                                Beans.Lawyers(
                                     item.id,
                                     item.firstName,
                                     item.lastName,

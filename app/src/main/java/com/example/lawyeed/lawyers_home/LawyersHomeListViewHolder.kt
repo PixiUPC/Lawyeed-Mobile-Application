@@ -1,6 +1,6 @@
 package com.example.lawyeed.lawyers_home
 
-import Beans.Lawyer
+import Beans.Lawyers
 import Helpers.CircleTransform
 import android.view.View
 import android.widget.ImageView
@@ -14,10 +14,10 @@ class LawyersHomeListViewHolder(view: View): RecyclerView.ViewHolder(view) {
     val name = view.findViewById<TextView>(R.id.text_name)
     val image = view.findViewById<ImageView>(R.id.image_name)
 
-    fun render(lawyer:Lawyer){
-        name.text = lawyer.fisrtName.toString()
+    fun render(lawyers:Lawyers){
+        name.text = lawyers.fisrtName.toString()
         Picasso.get()
-            .load(lawyer.urlImage.toString())
+            .load(lawyers.urlImage.toString())
             .resize(42, 42)
             .centerCrop()
             .transform(CircleTransform())
