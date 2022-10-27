@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -35,25 +35,56 @@
                 android:id="@+id/person_image" />
         </RelativeLayout>
 
-        <TextView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border_botton_titles"
-            android:text="Abogados Recomendados"
-            android:textAllCaps="true"
-            android:textStyle="bold"
-            android:textColor="#2B2B2B"
+            android:layout_height="142dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            />
+            android:orientation="horizontal">
 
-        <androidx.recyclerview.widget.RecyclerView
+
+            <ImageView
+                android:id="@+id/lawyerPic"
+                android:layout_width="101dp"
+                android:layout_height="97dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginLeft="105dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lawyerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lawyer_Name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginLeft="105dp"
+                android:layout_marginTop="48dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/lawyerDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lawyer_Description" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/buttonContratar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="5dp"
-            android:paddingHorizontal="5dp"
-            android:id="@+id/recycler_lawyers"
-            />
+            android:text="Contratar"
+            android:backgroundTint="#2B2B2B"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -70,14 +101,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="5dp"
-            android:id="@+id/recycler_cases"
+            android:id="@+id/recycler_cases_lawyer"
             />
-
+        <!-- Ultimas Notificaciones -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_botton_titles"
-            android:text="Ultimos Notificaciones"
+            android:text="Calificaciones de Clientes"
             android:textAllCaps="true"
             android:textStyle="bold"
             android:textColor="#2B2B2B"
@@ -89,40 +120,8 @@
             android:layout_height="300dp"
             android:orientation="horizontal"
             android:paddingBottom="5dp"
-            android:id="@+id/recycler_notifications"
+            android:id="@+id/recycler_notifications_lawyer"
             />
-
-        <Button
-            android:id="@+id/btnNotification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Notification"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="53dp"
-            tools:ignore="MissingConstraints" />
-
-        <Button
-            android:id="@+id/btnCases"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cases"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="53dp"
-            tools:ignore="MissingConstraints" />
-
-        <Button
-            android:id="@+id/btnSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="53dp"
-            tools:ignore="MissingConstraints" />
-
-        <!--
-
-
-        -->
     </LinearLayout >
 
 </ScrollView>

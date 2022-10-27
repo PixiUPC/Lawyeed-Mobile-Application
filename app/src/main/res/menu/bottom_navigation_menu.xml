@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Inicio" android:id="@+id/btn1" android:icon="@drawable/ic_home"/>
+    <item android:title="Notificaciones" android:id="@+id/btn2" android:icon="@drawable/ic_notification"/>
+    <item android:title="Buscar" android:id="@+id/btn3" android:icon="@drawable/ic_search"/>
+    <item android:title="Casos" android:id="@+id/btn4" android:icon="@drawable/ic_book"/>
+
+</menu>
