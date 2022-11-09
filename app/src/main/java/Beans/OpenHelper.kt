@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class OpenHelper(context: Context): SQLiteOpenHelper(context,"user.db",null,3) {
+class OpenHelper(context: Context): SQLiteOpenHelper(context,"user.db",null,7) {
     override fun onCreate(p0: SQLiteDatabase?) {
         val query = "create table user(id integer primary key, firstName text, lastName text, email text," +
                 " description text, urlImage text, type text, specialty text, wonCases integer, " +
