@@ -56,8 +56,8 @@ class Profile : AppCompatActivity() {
         }
 
         btnComprarSubscripcion.setOnClickListener() {
-            //val intent = Intent(this, Subscription::class.java)
-            //startActivity(intent)
+            val intent = Intent(this, Subscription::class.java)
+            startActivity(intent)
         }
     }
 }

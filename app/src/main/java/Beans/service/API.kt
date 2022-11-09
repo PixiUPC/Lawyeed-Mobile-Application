@@ -8,6 +8,8 @@ interface API {
      @GET
      fun getCases(@Url url:String): Call<List<CasesResponse>>
      @GET
+     fun getSubscriptions(@Url url:String): Call<List<SubscriptionResponse>>
+     @GET
      fun getNotifications(@Url url:String): Call<List<NotificationResponse>>
      @GET
      fun getLawyers(@Url url:String): Call<List<PersonResponse>>
