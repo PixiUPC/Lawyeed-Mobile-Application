@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_botton_titles"
         android:text="Abogados Encontrados"
+        android:layout_marginLeft="15dp"
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="#2B2B2B"
@@ -47,7 +48,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnregresarsearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
