@@ -18,7 +18,15 @@ class OpenHelper(context: Context): SQLiteOpenHelper(context,"user.db",null,7) {
         p0!!.execSQL(query)
         onCreate(p0);
     }
+    fun getUserType():String {
+        val query = this.readableDatabase.rawQuery("select * from user", null)
 
+        return if(query.moveToFirst()) {
+            query.getString(6);
+        } else {
+            "";
+        }
+    }
     fun addUser(id:Int, firstName:String, lastName:String, email:String, description:String, urlImage:String,
                 type:String, speciality: String, wonCases:Int, totalCases:Int, lostCases:Int) {
 
