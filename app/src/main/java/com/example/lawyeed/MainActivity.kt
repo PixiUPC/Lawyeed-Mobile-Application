@@ -11,7 +11,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lawyeed.notification.Adapter
@@ -51,13 +50,13 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide();
 
-        findViewById<AppCompatButton>(R.id.btnNotification).setOnClickListener() {
+        findViewById<Button>(R.id.btnNotification).setOnClickListener() {
             startActivity(Intent(this, com.example.lawyeed.Notification::class.java))
         }
-        findViewById<AppCompatButton>(R.id.btnCases).setOnClickListener() {
+        findViewById<Button>(R.id.btnCases).setOnClickListener() {
             startActivity(Intent(this, Cases::class.java))
         }
-        findViewById<AppCompatButton>(R.id.btnSearch).setOnClickListener() {
+        findViewById<Button>(R.id.btnSearch).setOnClickListener() {
             startActivity(Intent(this, Search::class.java))
         }
 
