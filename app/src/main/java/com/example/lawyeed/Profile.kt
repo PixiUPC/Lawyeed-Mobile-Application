@@ -1,6 +1,8 @@
 package com.example.lawyeed
 
 import Beans.OpenHelper
+import Beans.service.API
+import Beans.service.`class`.Client
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +10,9 @@ import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -37,18 +42,29 @@ class Profile : AppCompatActivity() {
             .into(findViewById<ShapeableImageView>(R.id.myphoto))
         println(db.getUserImage())
 
-        val name = db.getUserName()
-        val description = db.getUserDescription()
-        val email = db.getUserEmail()
+        val myId = db.getUserId()
 
-        val textNombre: TextView = findViewById(R.id.textNombre)
-        val textDescripcion: TextView = findViewById(R.id.textDescripcion)
-        val textEmail: TextView = findViewById(R.id.textEmail)
-        val textEdad: TextView = findViewById(R.id.textEdad)
+        getRetrofit().create(API::class.java)
+            .getUserData("person/${myId}")
+            .enqueue(object : Callback<Client?> {
+                override fun onResponse(call: Call<Client?>, response: Response<Client?>) {
 
-        textNombre.text = name
-        textDescripcion.text = description
-        textEmail.text = email
+                    val item = response.body()!!
+
+                    val textNombre: TextView = findViewById(R.id.textNombre)
+                    val textDescripcion: TextView = findViewById(R.id.textDescripcion)
+                    val textEmail: TextView = findViewById(R.id.textEmail)
+
+                    textNombre.text = item.fisrtName + ' ' + item.lastName
+                    textDescripcion.text = item.description
+                    textEmail.text = item.email
+                }
+
+                override fun onFailure(call: Call<Client?>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+
+            })
 
         btnEditarPerfil.setOnClickListener() {
             val intent = Intent(this, ProfileEdit::class.java)

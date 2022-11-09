@@ -66,13 +66,33 @@ class OpenHelper(context: Context): SQLiteOpenHelper(context,"user.db",null,3) {
         }
 
         if(query2.moveToFirst()) {
-            query.getString(0);
-            res += "${query.getString(0)}";
+            query2.getString(0);
+            res += "${query2.getString(0)}";
         } else {
 
         }
 
         return res
+    }
+
+    fun getNombre(): String {
+        val query = this.readableDatabase.rawQuery("select firstName from user", null)
+
+        return if(query.moveToFirst()) {
+            query.getString(0);
+        } else {
+            "";
+        }
+    }
+
+    fun getApellido(): String {
+        val query = this.readableDatabase.rawQuery("select lastName from user", null)
+
+        return if(query.moveToFirst()) {
+            query.getString(0);
+        } else {
+            "";
+        }
     }
 
     fun getUserDescription(): String {
@@ -104,6 +124,11 @@ class OpenHelper(context: Context): SQLiteOpenHelper(context,"user.db",null,3) {
             "";
         }
     }
+
+    fun updateUser(id:Int, firstname:String, lastname:String, desc:String, email:String) {
+        this.writableDatabase!!.execSQL("UPDATE user SET firstname='${firstname}', lastname='${lastname}', description='${desc}', email='${email}' WHERE id=${id}")
+    }
+
     fun removeUser(id:Int) {
         this.writableDatabase!!.execSQL("DELETE FROM user WHERE id=${id}")
     }
