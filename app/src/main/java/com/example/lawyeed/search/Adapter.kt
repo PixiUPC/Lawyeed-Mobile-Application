@@ -1,18 +1,12 @@
 package com.example.lawyeed.search
 
-import Beans.Cases
-import Beans.Lawyer
-import android.content.Intent
+import Beans.Lawyers
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lawyeed.R
-import com.example.lawyeed.cases.CasesListViewHolder
-import com.example.lawyeed.lawyers_home.LawyersHomeListViewHolder
-import com.example.lawyeed.one_case
 
-class Adapter(val lawyers:List<Lawyer>): RecyclerView.Adapter<LawyerSearchViewHolder>() {
+class Adapter(val lawyers:List<Lawyers>): RecyclerView.Adapter<LawyerSearchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LawyerSearchViewHolder {
 
         val layoutInflater= LayoutInflater.from(parent.context)

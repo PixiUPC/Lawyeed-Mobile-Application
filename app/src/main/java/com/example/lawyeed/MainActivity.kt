@@ -61,9 +61,15 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        //Ingresar a mi perfil
+        val btnIngresarPerfil: ShapeableImageView = findViewById(R.id.person_image)
+        btnIngresarPerfil.setOnClickListener() {
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
 
         //Lista de Abogados
-        val listLawyers = mutableListOf<Beans.Lawyer>()
+        val listLawyers = mutableListOf<Beans.Lawyers>()
 
         getRetrofit().create(API::class.java)
             .getLawyers("personlawyers/").enqueue(object : Callback<List<PersonResponse>?> {
@@ -75,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                     for(item in response.body()!!) {
                         if(counter < 5) {
                             listLawyers.add(
-                                Beans.Lawyer(
+                                Beans.Lawyers(
                                     item.id,
                                     item.firstName,
                                     item.lastName,

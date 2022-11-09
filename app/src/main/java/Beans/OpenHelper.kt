@@ -52,6 +52,49 @@ class OpenHelper(context: Context): SQLiteOpenHelper(context,"user.db",null,3) {
         }
     }
 
+    fun getUserName(): String {
+        val query = this.readableDatabase.rawQuery("select firstName from user", null)
+        val query2 = this.readableDatabase.rawQuery("select lastName from user", null)
+
+        var res = ""
+
+        if(query.moveToFirst()) {
+            query.getString(0);
+            res += "${query.getString(0)} ";
+        } else {
+
+        }
+
+        if(query2.moveToFirst()) {
+            query.getString(0);
+            res += "${query.getString(0)}";
+        } else {
+
+        }
+
+        return res
+    }
+
+    fun getUserDescription(): String {
+        val query = this.readableDatabase.rawQuery("select description from user", null)
+
+        return if(query.moveToFirst()) {
+            query.getString(0);
+        } else {
+            "";
+        }
+    }
+
+    fun getUserEmail(): String {
+        val query = this.readableDatabase.rawQuery("select email from user", null)
+
+        return if(query.moveToFirst()) {
+            query.getString(0);
+        } else {
+            "";
+        }
+    }
+
     fun getUserImage(): String {
         val query = this.readableDatabase.rawQuery("select urlImage from user", null)
 

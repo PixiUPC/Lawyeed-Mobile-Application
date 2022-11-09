@@ -2,20 +2,15 @@ package com.example.lawyeed
 
 import Beans.OpenHelper
 import Beans.service.API
-import Beans.service.`class`.NotificationResponse
-import Beans.service.`class`.OneCaseReponse
 import Beans.service.`class`.PersonResponse
 import Helpers.CircleTransform
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lawyeed.notification.Adapter
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 import retrofit2.Call
@@ -68,7 +63,7 @@ class SearchResult : AppCompatActivity() {
                 .build();
         }
 
-        val listLawyers = mutableListOf<Beans.Lawyer>()
+        val listLawyers = mutableListOf<Beans.Lawyers>()
 
         getRetrofit().create(API::class.java)
             .getLawyers("personlawyers/").enqueue(object : Callback<List<PersonResponse>?> {
@@ -81,7 +76,7 @@ class SearchResult : AppCompatActivity() {
                             val tmpnames = item.firstName.toString() + " " + item.lastName.toString()
                             if(tmpnames.contains(intentnames.toString())) {
                                 listLawyers.add(
-                                    Beans.Lawyer(
+                                    Beans.Lawyers(
                                         item.id,
                                         item.firstName,
                                         item.lastName,
@@ -102,7 +97,7 @@ class SearchResult : AppCompatActivity() {
                             val tmpcases = item.wonCases.toString().toInt()
                             if((intentcases.toInt() >= tmpcases) and (item.specialty.contains(intentspecialty.toString()))) {
                                 listLawyers.add(
-                                    Beans.Lawyer(
+                                    Beans.Lawyers(
                                         item.id,
                                         item.firstName,
                                         item.lastName,
