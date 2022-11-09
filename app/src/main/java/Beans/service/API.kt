@@ -16,10 +16,4 @@ interface API {
 
      @GET
      fun login(@Url url: String):Call<PersonResponse>
-     @GET
-     fun getOneLawyer(@Url url:String): Call<Lawyer>
-
-     @Headers("Content-Type: application/json")
-     @POST("api/v1/consults")
-     fun createdCase(@Body caso: CasoItem): Call<CasoItem>
 }

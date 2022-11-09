@@ -15,7 +15,7 @@ import com.squareup.picasso.Picasso
 
 class SearchName : AppCompatActivity(){
 
-    lateinit var iniSearch: AppCompatButton
+    lateinit var iniSearch: Button
     lateinit var searchname: EditText
 
     @SuppressLint("MissingInflatedId")
@@ -36,7 +36,7 @@ class SearchName : AppCompatActivity(){
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 
-        iniSearch = findViewById<AppCompatButton>(R.id.btnIniSearchName)
+        iniSearch = findViewById<Button>(R.id.btnIniSearchName)
         searchname = findViewById<EditText>(R.id.textInputEditTextNames)
         iniSearch.setOnClickListener {
             if (searchname.text.toString()!=""){
@@ -48,7 +48,7 @@ class SearchName : AppCompatActivity(){
                 startActivity(intent)
             }
         }
-        findViewById<AppCompatButton>(R.id.btnregresarsearch).setOnClickListener() {
+        findViewById<Button>(R.id.btnregresarsearch).setOnClickListener() {
             startActivity(Intent(this, Search::class.java))
         }
 

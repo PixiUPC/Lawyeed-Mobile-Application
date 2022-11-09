@@ -14,5 +14,6 @@ class PersonResponse(
     @SerializedName("wonCases") var wonCases: Int,
     @SerializedName("totalCases") var totalCases: Int,
     @SerializedName("lostCases") var lostCases: Int
+
 )
 

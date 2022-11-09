@@ -15,7 +15,7 @@ import com.squareup.picasso.Picasso
 
 class SearchSpecialty : AppCompatActivity(){
 
-    lateinit var iniSearch: AppCompatButton
+    lateinit var iniSearch: Button
     lateinit var searchcases: EditText
     lateinit var searchspecialty: EditText
 
@@ -36,11 +36,11 @@ class SearchSpecialty : AppCompatActivity(){
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 
-        iniSearch = findViewById<AppCompatButton>(R.id.btnIniSearchSpecialty)
+        iniSearch = findViewById<Button>(R.id.btnIniSearchSpecialty)
         searchspecialty = findViewById<EditText>(R.id.textInputEditTextSpecialty)
         searchcases = findViewById<EditText>(R.id.textInputEditTextCases)
         iniSearch.setOnClickListener {
-            if ((searchcases.text.toString().toInt()>-1) and (searchspecialty.text.toString()!="")){
+            if ((searchcases.text.toString().toInt()>-1) or (searchspecialty.text.toString()!="")){
                 val intent = Intent(this@SearchSpecialty, SearchResult::class.java)
                 val type = "specialty"
                 intent.putExtra("type", type)
@@ -52,7 +52,7 @@ class SearchSpecialty : AppCompatActivity(){
             }
         }
 
-        findViewById<AppCompatButton>(R.id.btnregresarsearch).setOnClickListener() {
+        findViewById<Button>(R.id.btnregresarsearch).setOnClickListener() {
             startActivity(Intent(this, Search::class.java))
         }
 

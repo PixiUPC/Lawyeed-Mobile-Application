@@ -46,21 +46,15 @@ class Search : AppCompatActivity(){
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 
-        findViewById<AppCompatButton>(R.id.btnregresarmain).setOnClickListener() {
+        findViewById<Button>(R.id.btnregresarmain).setOnClickListener() {
             startActivity(Intent(this, MainActivity::class.java))
         }
-        findViewById<AppCompatButton>(R.id.btnSearchName).setOnClickListener() {
+        findViewById<Button>(R.id.btnSearchName).setOnClickListener() {
             startActivity(Intent(this, SearchName::class.java))
         }
-        findViewById<AppCompatButton>(R.id.btnSearchSpecialty).setOnClickListener() {
-            val intent = Intent(this@Search, SearchResult::class.java)
-            val type = "all"
-            intent.putExtra("type", type)
-            startActivity(intent)
-        }
-        /*findViewById<AppCompatButton>(R.id.btnSearchSpecialty).setOnClickListener() {
+        findViewById<Button>(R.id.btnSearchSpecialty).setOnClickListener() {
             startActivity(Intent(this, SearchSpecialty::class.java))
-        }*/
+        }
 
 
 

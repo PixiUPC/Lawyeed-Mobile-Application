@@ -45,13 +45,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".one_lawyer"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Cases"
             android:exported="false">
             <meta-data

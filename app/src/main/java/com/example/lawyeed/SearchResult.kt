@@ -2,16 +2,20 @@ package com.example.lawyeed
 
 import Beans.OpenHelper
 import Beans.service.API
+import Beans.service.`class`.NotificationResponse
+import Beans.service.`class`.OneCaseReponse
 import Beans.service.`class`.PersonResponse
 import Helpers.CircleTransform
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lawyeed.notification.Adapter
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 import retrofit2.Call
@@ -44,7 +48,7 @@ class SearchResult : AppCompatActivity() {
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 
-        findViewById<AppCompatButton>(R.id.btnregresarsearch).setOnClickListener() {
+        findViewById<Button>(R.id.btnregresarsearch).setOnClickListener() {
             startActivity(Intent(this, Search::class.java))
         }
 
@@ -64,7 +68,7 @@ class SearchResult : AppCompatActivity() {
                 .build();
         }
 
-        val listLawyers = mutableListOf<Beans.Lawyers>()
+        val listLawyers = mutableListOf<Beans.Lawyer>()
 
         getRetrofit().create(API::class.java)
             .getLawyers("personlawyers/").enqueue(object : Callback<List<PersonResponse>?> {
@@ -77,7 +81,7 @@ class SearchResult : AppCompatActivity() {
                             val tmpnames = item.firstName.toString() + " " + item.lastName.toString()
                             if(tmpnames.contains(intentnames.toString())) {
                                 listLawyers.add(
-                                    Beans.Lawyers(
+                                    Beans.Lawyer(
                                         item.id,
                                         item.firstName,
                                         item.lastName,
@@ -95,10 +99,10 @@ class SearchResult : AppCompatActivity() {
                             }
                         }
                         if (type == "specialty"){
-                            val tmpcases = item.wonCases
-                            if((intentcases.toInt() >= tmpcases) and (item.specialty.contains(intentspecialty))) {
+                            val tmpcases = item.wonCases.toString().toInt()
+                            if((intentcases.toInt() >= tmpcases) and (item.specialty.contains(intentspecialty.toString()))) {
                                 listLawyers.add(
-                                    Beans.Lawyers(
+                                    Beans.Lawyer(
                                         item.id,
                                         item.firstName,
                                         item.lastName,
@@ -114,24 +118,6 @@ class SearchResult : AppCompatActivity() {
                                     )
                                 )
                             }
-                        }
-                        if (type == "all"){
-                            listLawyers.add(
-                                Beans.Lawyers(
-                                    item.id,
-                                    item.firstName,
-                                    item.lastName,
-                                    item.email,
-                                    "",
-                                    item.description,
-                                    item.urlImage,
-                                    item.type,
-                                    item.specialty,
-                                    item.wonCases,
-                                    item.totalCases,
-                                    item.lostCases
-                                )
-                            )
                         }
 
                     }

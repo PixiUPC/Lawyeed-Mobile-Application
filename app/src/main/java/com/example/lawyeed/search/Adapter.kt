@@ -1,15 +1,18 @@
 package com.example.lawyeed.search
 
-import Beans.Lawyers
+import Beans.Cases
+import Beans.Lawyer
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lawyeed.R
-import com.example.lawyeed.one_lawyer
+import com.example.lawyeed.cases.CasesListViewHolder
+import com.example.lawyeed.lawyers_home.LawyersHomeListViewHolder
+import com.example.lawyeed.one_case
 
-class Adapter(val lawyers:List<Lawyers>): RecyclerView.Adapter<LawyerSearchViewHolder>() {
+class Adapter(val lawyers:List<Lawyer>): RecyclerView.Adapter<LawyerSearchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LawyerSearchViewHolder {
 
         val layoutInflater= LayoutInflater.from(parent.context)
@@ -19,13 +22,6 @@ class Adapter(val lawyers:List<Lawyers>): RecyclerView.Adapter<LawyerSearchViewH
     override fun onBindViewHolder(holder: LawyerSearchViewHolder, position: Int) {
         val lawyer = lawyers[position]
         holder.render(lawyer)
-        holder.itemView.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(p: View) {
-                val intent = Intent(holder.itemView.context, one_lawyer::class.java)
-                intent.putExtra("id", lawyer.id)
-                holder.itemView.context.startActivity(intent)
-            }
-        })
     }
 
     override fun getItemCount(): Int = lawyers.size
