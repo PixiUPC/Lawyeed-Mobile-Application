@@ -4,7 +4,7 @@ import Beans.Notification
 import Beans.OpenHelper
 import Beans.service.API
 import Beans.service.`class`.NotificationResponse
-import Helpers.CircleTransform
+import Helpers.Circle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,7 +32,7 @@ class Notification : AppCompatActivity() {
             .load(db.getUserImage())
             .resize(42, 42)
             .centerCrop()
-            .transform(CircleTransform())
+            .transform(Circle())
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 

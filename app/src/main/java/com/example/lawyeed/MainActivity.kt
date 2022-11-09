@@ -6,7 +6,7 @@ import Beans.service.API
 import Beans.service.`class`.CasesResponse
 import Beans.service.`class`.NotificationResponse
 import Beans.service.`class`.PersonResponse
-import Helpers.CircleTransform
+import Helpers.Circle
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -44,23 +44,12 @@ class MainActivity : AppCompatActivity() {
             .load(db.getUserImage())
             .resize(42, 42)
             .centerCrop()
-            .transform(CircleTransform())
+            .transform(Circle())
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 
 
         supportActionBar?.hide();
-
-        findViewById<AppCompatButton>(R.id.btnNotification).setOnClickListener() {
-            startActivity(Intent(this, com.example.lawyeed.Notification::class.java))
-        }
-        findViewById<AppCompatButton>(R.id.btnCases).setOnClickListener() {
-            startActivity(Intent(this, Cases::class.java))
-        }
-        findViewById<AppCompatButton>(R.id.btnSearch).setOnClickListener() {
-            startActivity(Intent(this, Search::class.java))
-        }
-
 
         //Ingresar a mi perfil
         val btnIngresarPerfil: ShapeableImageView = findViewById(R.id.person_image)

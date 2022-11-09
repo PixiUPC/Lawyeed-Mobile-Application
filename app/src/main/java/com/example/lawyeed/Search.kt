@@ -5,7 +5,7 @@ import Beans.OpenHelper
 import Beans.service.API
 import Beans.service.`class`.NotificationResponse
 import Beans.service.`class`.PersonResponse
-import Helpers.CircleTransform
+import Helpers.Circle
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -42,7 +42,7 @@ class Search : AppCompatActivity(){
             .load(db.getUserImage())
             .resize(42, 42)
             .centerCrop()
-            .transform(CircleTransform())
+            .transform(Circle())
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 

@@ -1,7 +1,7 @@
 package com.example.lawyeed
 
 import Beans.OpenHelper
-import Helpers.CircleTransform
+import Helpers.Circle
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -32,7 +32,7 @@ class SearchName : AppCompatActivity(){
             .load(db.getUserImage())
             .resize(42, 42)
             .centerCrop()
-            .transform(CircleTransform())
+            .transform(Circle())
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 

@@ -4,7 +4,7 @@ import Beans.OpenHelper
 import Beans.service.API
 import Beans.service.`class`.OneCaseReponse
 import Beans.service.`class`.PersonResponse
-import Helpers.CircleTransform
+import Helpers.Circle
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -33,7 +33,7 @@ class one_case : AppCompatActivity() {
             .load(db.getUserImage())
             .resize(42, 42)
             .centerCrop()
-            .transform(CircleTransform())
+            .transform(Circle())
             .into(findViewById<ShapeableImageView>(R.id.person_image))
         println(db.getUserImage())
 
@@ -72,7 +72,7 @@ class one_case : AppCompatActivity() {
                         .load(item.lawyer.urlImage)
                         .resize(42, 42)
                         .centerCrop()
-                        .transform(CircleTransform())
+                        .transform(Circle())
                         .into(image_lawyer)
 
                     if(item.state  == "ABIERTO") {

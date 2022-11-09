@@ -5,7 +5,7 @@ import Beans.OpenHelper
 import Beans.service.API
 import Beans.service.`class`.*
 import Beans.service.`class`.Lawyer
-import Helpers.CircleTransform
+import Helpers.Circle
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView

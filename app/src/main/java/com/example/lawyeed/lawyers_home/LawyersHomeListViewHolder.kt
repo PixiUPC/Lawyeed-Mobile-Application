@@ -1,7 +1,7 @@
 package com.example.lawyeed.lawyers_home
 
 import Beans.Lawyers
-import Helpers.CircleTransform
+import Helpers.Circle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -20,7 +20,7 @@ class LawyersHomeListViewHolder(view: View): RecyclerView.ViewHolder(view) {
             .load(lawyers.urlImage.toString())
             .resize(42, 42)
             .centerCrop()
-            .transform(CircleTransform())
+            .transform(Circle())
             .into(image)
 
 

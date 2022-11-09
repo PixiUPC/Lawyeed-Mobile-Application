@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="5dp"
-            android:paddingHorizontal="5dp"
+            android:paddingHorizontal="0dp"
             android:id="@+id/recycler_lawyers"
             />
 
@@ -91,50 +91,6 @@
             android:paddingBottom="5dp"
             android:id="@+id/recycler_notifications"
             />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="bottom"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnNotification"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:text="Notification"
-                android:textColor="@color/white"
-                tools:layout_editor_absoluteX="158dp"
-                tools:layout_editor_absoluteY="53dp"
-                android:background="@drawable/round_button"
-                tools:ignore="MissingConstraints" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnCases"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:text="Cases"
-                android:textColor="@color/white"
-                tools:layout_editor_absoluteX="158dp"
-                tools:layout_editor_absoluteY="53dp"
-                android:background="@drawable/round_button"
-                android:layout_marginLeft="15dp"
-                tools:ignore="MissingConstraints" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSearch"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:text="Search"
-                android:textColor="@color/white"
-                android:background="@drawable/round_button"
-                tools:layout_editor_absoluteX="158dp"
-                tools:layout_editor_absoluteY="53dp"
-                android:layout_marginLeft="15dp"
-                tools:ignore="MissingConstraints" />
-
-        </LinearLayout>
 
 
 

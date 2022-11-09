@@ -1,7 +1,7 @@
 package com.example.lawyeed.search
 
 import Beans.Lawyers
-import Helpers.CircleTransform
+import Helpers.Circle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -22,7 +22,7 @@ class LawyerSearchViewHolder(view: View): RecyclerView.ViewHolder(view) {
             .load(search.urlImage.toString())
             .resize(42, 42)
             .centerCrop()
-            .transform(CircleTransform())
+            .transform(Circle())
             .into(image)
     }
 }
