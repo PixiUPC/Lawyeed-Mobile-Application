@@ -69,7 +69,7 @@
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnIniSearchSpecialty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnregresarsearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

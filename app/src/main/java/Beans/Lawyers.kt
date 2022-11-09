@@ -1,6 +1,6 @@
 package Beans
 
-class Lawyer {
+class Lawyers {
     var id:Int
     var fisrtName:String
     var lastName:String
