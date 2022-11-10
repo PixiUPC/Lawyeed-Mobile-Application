@@ -6,6 +6,7 @@ import Beans.service.API
 import Beans.service.`class`.*
 import Beans.service.`class`.Lawyer
 import Helpers.Circle
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -33,8 +34,8 @@ class one_lawyer: AppCompatActivity() {
         val button_contratar = findViewById<Button>(R.id.buttonContratar)
 
         button_contratar.setOnClickListener{
-            val showPopUp = popUpFragmentContratar()
-            showPopUp.show((this as AppCompatActivity).supportFragmentManager, "showPopUp")
+            val intent = Intent(this, CREARCASO::class.java)
+            startActivity(intent)
         }
 
         fun getRetrofit(): Retrofit {
@@ -50,8 +51,11 @@ class one_lawyer: AppCompatActivity() {
                 override fun onResponse(call: Call<Lawyer?>, response: Response<Lawyer?>) {
 
                     val item = response.body()!!
+                    val imageLawyer = findViewById<ImageView>(R.id.lawyerPic)
                     val lawyerNamePerson = findViewById<TextView>(R.id.lawyerName)
                     val lawyerDescriptionPerson = findViewById<TextView>(R.id.lawyerDescription)
+
+                    Picasso.get().load(item.urlImage).into(imageLawyer)
 
                     lawyerNamePerson.text = item.fisrtName
                     lawyerDescriptionPerson.text = item.description

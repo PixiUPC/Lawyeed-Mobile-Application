@@ -36,7 +36,7 @@ interface API {
 
      @Headers("Content-Type: application/json")
      @POST("api/v1/consults")
-     fun createdCase(@Body caso: CasoItem): Call<CasoItem>
+     fun createCase(@Body caso: CASOPOST): Call<CASOPOST>
 
      @GET
      fun getMessageConsult(@Url url:String): Call<List<MessageResponse>>
