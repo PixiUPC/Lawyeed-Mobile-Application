@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 
@@ -29,6 +30,29 @@ class ProfileUpdated : AppCompatActivity() {
         btnCerrarEditarMiPerfil.setOnClickListener() {
             val intent = Intent(this, Profile::class.java)
             startActivity(intent)
+        }
+
+        val btnBotAppBar: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        btnBotAppBar.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.btnMenuInicio -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuNotificaciones -> {
+                    val intent = Intent(this, Notification::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuBuscar -> {
+                    val intent = Intent(this, Search::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuCasos -> {
+                    val intent = Intent(this, Cases::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
         }
     }
 }

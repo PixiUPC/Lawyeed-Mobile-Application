@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 import retrofit2.Call
@@ -114,6 +115,29 @@ class ProfileEdit : AppCompatActivity() {
 
             val intent = Intent(this, ProfileUpdated::class.java)
             startActivity(intent)
+        }
+
+        val btnBotAppBar: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        btnBotAppBar.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.btnMenuInicio -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuNotificaciones -> {
+                    val intent = Intent(this, Notification::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuBuscar -> {
+                    val intent = Intent(this, Search::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuCasos -> {
+                    val intent = Intent(this, Cases::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
         }
     }
 }

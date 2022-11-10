@@ -15,6 +15,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lawyeed.notification.Adapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 import retrofit2.Call
@@ -167,5 +168,28 @@ class MainActivity : AppCompatActivity() {
                 }
 
             })
+
+        val btnBotAppBar: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        btnBotAppBar.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.btnMenuInicio -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuNotificaciones -> {
+                    val intent = Intent(this, com.example.lawyeed.Notification::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuBuscar -> {
+                    val intent = Intent(this, Search::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuCasos -> {
+                    val intent = Intent(this, Cases::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
     }
 }
