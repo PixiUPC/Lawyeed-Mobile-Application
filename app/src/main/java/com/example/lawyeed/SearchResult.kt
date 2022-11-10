@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 import retrofit2.Call
@@ -146,6 +147,37 @@ class SearchResult : AppCompatActivity() {
                 }
 
             })
+        
+        //Ingresar a mi perfil
+        val btnIngresarPerfil: ShapeableImageView = findViewById(R.id.person_image)
+        btnIngresarPerfil.setOnClickListener() {
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
+
+        //Menu de abajo
+        val btnBotAppBar: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        btnBotAppBar.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.btnMenuInicio -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuNotificaciones -> {
+                    val intent = Intent(this, Notification::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuBuscar -> {
+                    val intent = Intent(this, Search::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuCasos -> {
+                    val intent = Intent(this, Cases::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
     }
 
 }
