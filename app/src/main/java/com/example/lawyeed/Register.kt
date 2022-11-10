@@ -118,7 +118,7 @@ class Register : AppCompatActivity() {
                     )
 
                     getRetrofit().create(API::class.java)
-                        .createLaywer("person/register",lawyerObj)
+                        .createLaywer("personlawyers/register",lawyerObj)
                         .enqueue(object : Callback<RegisterLawyer?> {
                             override fun onResponse(call: Call<RegisterLawyer?>, response: Response<RegisterLawyer?>) {
                                 Toast.makeText(applicationContext,"Exitosamente creastes tu cuenta",Toast.LENGTH_SHORT).show()
