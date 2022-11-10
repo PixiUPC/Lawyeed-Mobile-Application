@@ -6,6 +6,7 @@ import Beans.service.API
 import Beans.service.`class`.*
 import Beans.service.`class`.Lawyer
 import Helpers.Circle
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -14,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lawyeed.notification.Adapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.imageview.ShapeableImageView
 import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
@@ -122,6 +125,36 @@ class one_lawyer: AppCompatActivity() {
                 }
 
             })
+
+        //Ingresar a mi perfil
+        val btnIngresarPerfil: ShapeableImageView = findViewById(R.id.person_image)
+        btnIngresarPerfil.setOnClickListener() {
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
+
+        val btnBotAppBar: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        btnBotAppBar.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.btnMenuInicio -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuNotificaciones -> {
+                    val intent = Intent(this, com.example.lawyeed.Notification::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuBuscar -> {
+                    val intent = Intent(this, Search::class.java)
+                    startActivity(intent)
+                }
+                R.id.btnMenuCasos -> {
+                    val intent = Intent(this, Cases::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
 
 
     }
