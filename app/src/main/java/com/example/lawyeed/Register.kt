@@ -110,7 +110,7 @@ class Register : AppCompatActivity() {
                         pass.text.toString(),
                         "string",
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png",
-                        "client",
+                        "lawyer",
                         "string",
                         0,
                         0,
