@@ -24,6 +24,12 @@ interface API {
      @GET
      fun getUserData(@Url url:String): Call<Client>
 
+     @POST
+     fun createPerson(@Url url:String, @Body client: RegisterClient): Call<RegisterClient>
+
+     @POST
+     fun createLaywer(@Url url:String, @Body lawyer: RegisterLawyer): Call<RegisterLawyer>
+
      @Headers("Content-Type: application/json")
      @PUT
      fun updateUserData(@Url url:String, @Body client: Client): Call<Client>

@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatTextView
 import com.google.android.material.textfield.TextInputEditText
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,8 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class Login : AppCompatActivity() {
 
     private lateinit var buttonLogin: Button
-
-
+    private lateinit var buttonRegister: AppCompatTextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +41,11 @@ class Login : AppCompatActivity() {
         initObjects()
 
         buttonLogin = findViewById(R.id.buttonLogin)
+        buttonRegister = findViewById(R.id.textViewLinkRegister)
+
+        buttonRegister.setOnClickListener() {
+            startActivity(Intent(applicationContext, Register::class.java))
+        }
 
         buttonLogin.setOnClickListener() {
             var email = findViewById<TextInputEditText>(R.id.email).text
